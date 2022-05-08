@@ -1,6 +1,10 @@
-# PizzaFloat
+# PizzaFloat 🍕
 
 Projeto VueJs visando um sistema de Delivery/Pedidos focado para Pizza.
+
+Authors: 
+    @DavidRusycki_
+    @Samuca23
 
 ## Project setup
 ```
