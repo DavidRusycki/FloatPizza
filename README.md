@@ -3,8 +3,8 @@
 Projeto VueJs visando um sistema de Delivery/Pedidos focado para Pizza.
 
 Authors: 
-- https://github.com/DavidRusycki
-- https://github.com/Samuca23
+- [@DavidRusycki_](https://github.com/DavidRusycki)
+- [@Samuca23](https://github.com/Samuca23)
 
 ## Project setup
 ```
