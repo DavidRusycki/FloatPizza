@@ -3,7 +3,7 @@
 Projeto VueJs visando um sistema de Delivery/Pedidos focado para Pizza.
 
 Authors: 
-- [@DavidRusycki_](https://github.com/DavidRusycki)
+- [@DavidRusycki](https://github.com/DavidRusycki)
 - [@Samuca23](https://github.com/Samuca23)
 
 ## Project setup
@@ -11,7 +11,7 @@ Authors:
 npm install
 ```
 
-### Compiles and hot-reloads for development
+## Compiles and hot-reloads for development
 ```
 npm run app
 ```
