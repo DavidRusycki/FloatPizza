@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: 'ViewHome',
+  name: 'ViewHome'
 }
 </script>
 
