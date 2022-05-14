@@ -21,6 +21,7 @@ export default {
     }
   }
 }
+
 </script>
 
 <style scoped>
@@ -33,18 +34,17 @@ export default {
   margin: 1em;
 }
 
-.card-tamanho-pizza:hover {
+.card-tamanho-pizza:active {
   background-color: #BC1E05;
   color: #ffffff;
   box-shadow:0 0 1em rgb(119, 119, 119);
-  transition: 100ms;
 }
 
 .dados-pizza {
+  padding: 5%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
 }
 
 .descricao-pizza {
@@ -53,8 +53,8 @@ export default {
 
 .tamanho-pizza {
   font-size: 18px;
-
 }
+
 .icone-pizza-padrao {
    width: 100px;
    height: 100px;
