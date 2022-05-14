@@ -5,6 +5,7 @@
 </template>
 
 <script>
+
 import NavBar from '@/components/NavBar.vue'
 import FooterRodape from '@/components/FooterRodape.vue'
 

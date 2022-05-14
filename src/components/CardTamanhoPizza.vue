@@ -1,6 +1,6 @@
 <template>
   <div class="card-tamanho-pizza" v-for="cardpizza in pizza" :key="cardpizza">
-    <div class="dados-pizza">
+    <div class="dados-pizza {{cardpizza.tamanho}}">
       <span class="descricao-pizza">{{cardpizza.descricao}}</span>
       <img src="/img/icone.png" class="icone-pizza-padrao">
       <span class="tamanho-pizza">{{cardpizza.tamanho}}</span>
