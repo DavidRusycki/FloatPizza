@@ -1,15 +1,14 @@
 <template>
-    <NavBar />
-    <Footer />
+ <CardFundoPizza/>
 </template>
 
 <script>
-import NavBar from '@/components/NavBar.vue'
+import CardFundoPizza from '@/components/CardFundoPizza.vue'
 
 export default {
   name: 'ViewPedido',
   components: {
-    NavBar
+    CardFundoPizza
   }
 }
 

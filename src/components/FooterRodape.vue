@@ -84,6 +84,6 @@ export default {
 .copy{
   font-size: 0.8em;
   font-family: 'Pt Sans', 'Helvetica';
-  color: /*rgba(188,30,5,1)*/ black;
+  color: rgba(188,30,5,1) ;
 }
 </style>
