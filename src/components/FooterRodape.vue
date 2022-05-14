@@ -25,7 +25,6 @@ export default {
 <style scoped>
 #footer{
   background: linear-gradient(90deg, rgba(255,204,3,1) 0%, rgba(238,78,35,1) 50%) !important;
-  /* background: rgba(240,121,61,1); */
   width: 100%;
   height: 150px;
   position: absolute;

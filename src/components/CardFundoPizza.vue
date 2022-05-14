@@ -24,6 +24,10 @@ export default {
   box-shadow:0 0 1em rgb(219, 219, 219);
   border-radius: 2%;
   display: grid;
+  justify-items: center;
+  align-content: center;
+  font-size: 0.8em;
+  font-family: 'Pt Sans', 'Helvetica';
 }
 
 @media(max-width: 1200px) {
