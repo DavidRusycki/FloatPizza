@@ -1,11 +1,17 @@
 <template>
   <div id="fundo-card-tamanho-pizza">
+    <CardTamanhoPizza/>
   </div>
 </template>
 
 <script>
+import CardTamanhoPizza from '@/components/CardTamanhoPizza.vue'
+
 export default {
-  name: 'CardFundoPizza'
+  name: 'CardFundoPizza',
+  components: {
+    CardTamanhoPizza
+  }
 }
 </script>
 
