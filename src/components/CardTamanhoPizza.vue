@@ -1,8 +1,10 @@
 <template>
   <div class="card-tamanho-pizza" v-for="cardpizza in pizza" :key="cardpizza">
-    <span>{{cardpizza.descricao}}</span>
-    <img src="/img/icone.png" class="icone-pizza-padrao">
-    <span>{{cardpizza.tamanho}}</span>
+    <div class="dados-pizza">
+      <span class="descricao-pizza">{{cardpizza.descricao}}</span>
+      <img src="/img/icone.png" class="icone-pizza-padrao">
+      <span class="tamanho-pizza">{{cardpizza.tamanho}}</span>
+    </div>
   </div>
 </template>
 
@@ -29,10 +31,6 @@ export default {
   height: 180px;
   border-radius: 5%;
   margin: 1em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .card-tamanho-pizza:hover {
@@ -42,6 +40,21 @@ export default {
   transition: 100ms;
 }
 
+.dados-pizza {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.descricao-pizza {
+  font-size: 24px;
+}
+
+.tamanho-pizza {
+  font-size: 18px;
+
+}
 .icone-pizza-padrao {
    width: 100px;
    height: 100px;
