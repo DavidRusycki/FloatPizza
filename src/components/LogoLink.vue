@@ -46,4 +46,7 @@ export default {
   font-size: 1.5em;
 }
 
+@media(max-width: 1200px) {
+
+}
 </style>

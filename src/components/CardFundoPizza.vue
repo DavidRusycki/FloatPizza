@@ -19,4 +19,17 @@ export default {
   border-radius: 2%;
   display: grid;
 }
+
+@media(max-width: 1200px) {
+ #fundo-card-tamanho-pizza{
+  width: 350px;
+  height: 550px;
+ }
+}
+@media(max-width: 1024px) {
+ #fundo-card-tamanho-pizza{
+  width: 350px;
+  height: 440px;
+ }
+}
 </style>

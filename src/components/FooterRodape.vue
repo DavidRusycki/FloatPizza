@@ -86,4 +86,8 @@ export default {
   font-family: 'Pt Sans', 'Helvetica';
   color: rgba(188,30,5,1) ;
 }
+
+@media(max-width: 1200px) {
+
+}
 </style>
