@@ -1,34 +1,29 @@
 <template>
-<<<<<<< HEAD
-  <div>
-    <h1>Pedido</h1>
+  <div class="main-container">
+    <CardFundoPizza/>
     <ItemList />
   </div>
 </template>
 
 <script>
-import ItemList from '@/components/ItemList.vue'
-=======
- <CardFundoPizza/>
-</template>
-
-<script>
 import CardFundoPizza from '@/components/CardFundoPizza.vue'
->>>>>>> origin
+import ItemList from '@/components/ItemList.vue'
 
 export default {
   name: 'ViewPedido',
   components: {
-<<<<<<< HEAD
+    CardFundoPizza,
     ItemList
-=======
-    CardFundoPizza
->>>>>>> origin
   }
 }
 
 </script>
 
 <style scoped>
+
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
 
 </style>

@@ -1,15 +1,15 @@
 <template>
     <div>
-        <div>
+        <div class="lista">
             <div class="abas">
                 <span @click="updateAba(indice)" class="header-abas" v-for="(aba, indice) in abas" :key="indice">
-                    {{aba}}
+                  {{aba}}
                 </span>
             </div>
-            <ListaSalgados v-if="selectedAba == 1"/>
-            <ListaDoces v-if="selectedAba == 2" />
-            <ListaBordas v-if="selectedAba == 3" />
-            <ListaBebidas v-if="selectedAba == 4" />
+            <ListaSalgados v-if="selectedAba == 0"/>
+            <ListaDoces v-if="selectedAba == 1" />
+            <ListaBordas v-if="selectedAba == 2" />
+            <ListaBebidas v-if="selectedAba == 3" />
         </div>
     </div>
 </template>
@@ -32,10 +32,10 @@ export default {
   methods: {
     getAbas () {
       const abas = []
-      abas[1] = 'Salgados'
-      abas[2] = 'Doces'
-      abas[3] = 'Bordas'
-      abas[4] = 'Bebidas'
+      abas[0] = 'Salgados'
+      abas[1] = 'Doces'
+      abas[2] = 'Bordas'
+      abas[3] = 'Bebidas'
 
       return abas
     },
@@ -72,7 +72,35 @@ export default {
 <style scoped>
 
 .header-abas {
-    margin-left: 10px;
+  margin-left: 10px;
+  width: 100%;
+}
+
+.header-abas:hover {
+  background-color: #e8b80c;
+}
+
+.header-abas:active {
+  background-color: #C59C0E;
+}
+
+.lista {
+  border-radius: 12px;
+  box-shadow: 0px 0px 1em rgb(219, 219, 219);
+  padding: 1em 2em;
+}
+
+.abas {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  background-color: #FDC80D;
+  padding: 0.5em;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.selected {
+  background-color: #C59C0E;
 }
 
 </style>
