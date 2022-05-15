@@ -2,7 +2,7 @@
     <div>
         <div class="lista">
             <div class="abas">
-                <span @click="updateAba(indice)" class="header-abas" v-for="(aba, indice) in abas" :key="indice">
+                <span @click="updateAba(indice)" :class="{'primeiro': isPrimeiro(indice),'header-abas': true, 'ultimo': isUltimo(indice), 'selected': isClicked(indice)}" v-for="(aba, indice) in abas" :key="indice">
                   {{aba}}
                 </span>
             </div>
@@ -42,19 +42,28 @@ export default {
     addComponent (componente) {
       this.components.push(componente)
     },
-    getJsonSalgados () {
-      const salgados = {
-        content: [
-          { titulo: 'Portuguesa', descricao: 'Queijo, azeitona verde ou preta, ovo cozido, presunto cozido, cebola, ervilha, molho de tomate e azeite' },
-          { titulo: 'Muçarela', descricao: 'Queijo, azeitona verde' },
-          { titulo: 'Alho e óleo', descricao: 'Alho e muito oleo' }
-        ]
-      }
-
-      return salgados
-    },
     updateAba (indice) {
       this.selectedAba = indice
+    },
+    isPrimeiro (indice) {
+      let retorno = false
+      if (indice == 0) {
+        retorno = true
+      }
+      return retorno
+    },
+    isUltimo (indice) {
+      let retorno = false
+      if (indice == 3) {
+        retorno = true
+      }
+      return retorno
+    },
+    isClicked (indice) {
+      if (indice == this.selectedAba) {
+        return true
+      }
+      return false
     }
   },
   mounted () {
@@ -71,11 +80,6 @@ export default {
 
 <style scoped>
 
-.header-abas {
-  margin-left: 10px;
-  width: 100%;
-}
-
 .header-abas:hover {
   background-color: #e8b80c;
 }
@@ -91,16 +95,29 @@ export default {
 }
 
 .abas {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  background-color: #FDC80D;
-  padding: 0.5em;
-  border-radius: 20px;
-  text-align: center;
+  border-radius: 10%;
+  top: 6.5em;
+  position: absolute;
 }
 
 .selected {
-  background-color: #C59C0E;
+  background-color: #C59C0E !important;
+}
+
+.header-abas {
+  background-color: #FDC80D;
+  padding: 0.5em 2em;
+  color: white;
+  font-weight: bold;
+  font-family: PT Sans;
+}
+
+.primeiro {
+  border-radius: 20px 0 0 20px;
+}
+
+.ultimo {
+  border-radius: 0 20px 20px 0;
 }
 
 </style>
