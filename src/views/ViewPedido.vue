@@ -1,15 +1,17 @@
 <template>
-    <NavBar />
-    <Footer />
+  <div>
+    <h1>Pedido</h1>
+    <ItemList />
+  </div>
 </template>
 
 <script>
-import NavBar from '@/components/NavBar.vue'
+import ItemList from '@/components/ItemList.vue'
 
 export default {
   name: 'ViewPedido',
   components: {
-    NavBar
+    ItemList
   }
 }
 
