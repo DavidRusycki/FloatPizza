@@ -25,7 +25,6 @@ export default {
 <style scoped>
 #footer{
   background: linear-gradient(90deg, rgba(255,204,3,1) 0%, rgba(238,78,35,1) 50%) !important;
-  /* background: rgba(240,121,61,1); */
   width: 100%;
   height: 150px;
   position: absolute;
@@ -84,6 +83,10 @@ export default {
 .copy{
   font-size: 0.8em;
   font-family: 'Pt Sans', 'Helvetica';
-  color: /*rgba(188,30,5,1)*/ black;
+  color: rgba(188,30,5,1) ;
+}
+
+@media(max-width: 1200px) {
+
 }
 </style>

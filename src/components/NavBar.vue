@@ -49,4 +49,7 @@ nav {
   color: #BC1E05;
 }
 
+@media(max-width: 1200px) {
+
+}
 </style>
