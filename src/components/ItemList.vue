@@ -47,20 +47,20 @@ export default {
     },
     isPrimeiro (indice) {
       let retorno = false
-      if (indice == 0) {
+      if (indice === 0) {
         retorno = true
       }
       return retorno
     },
     isUltimo (indice) {
       let retorno = false
-      if (indice == 3) {
+      if (indice === 3) {
         retorno = true
       }
       return retorno
     },
     isClicked (indice) {
-      if (indice == this.selectedAba) {
+      if (indice === this.selectedAba) {
         return true
       }
       return false
