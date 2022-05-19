@@ -1,12 +1,19 @@
-<template>
-    <div>
-        Bebidinhas
-    </div>
-</template>
-
 <script>
+import ListComponent from '@/components/ListComponent.vue'
+
 export default {
-  name: 'ListaBebidas'
+  name: 'ListaBebidas',
+  extends: ListComponent,
+  mounted () {
+    const bebidas = {
+      content: [
+        { codigo: 1, titulo: 'Cachaça', descricao: 'R$ 5.50' },
+        { codigo: 2, titulo: 'Cerveja', descricao: 'R$ 5.50' },
+        { codigo: 3, titulo: 'Coquinha', descricao: 'R$ 5.50' }
+      ]
+    }
+    this.items = bebidas.content
+  }
 }
 </script>
 

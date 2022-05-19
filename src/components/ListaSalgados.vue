@@ -1,33 +1,19 @@
-<template>
-    <div>
-      <ListComponent :titulo="salgado.titulo" :descricao="salgado.descricao" v-for="(salgado, indice) in salgados" :key="indice"/>
-    </div>
-</template>
-
 <script>
 import ListComponent from '@/components/ListComponent.vue'
 
 export default {
   name: 'ListaSalgados',
-  data () {
-    return {
-      salgados: []
-    }
-  },
+  extends: ListComponent,
   mounted () {
     const salgados = {
       content: [
-        { titulo: 'Portuguesa', descricao: 'Queijo, azeitona verde ou preta, ovo cozido, presunto cozido, cebola, ervilha, molho de tomate e azeite' },
-        { titulo: 'Muçarela', descricao: 'Queijo, azeitona verde' },
-        { titulo: 'Alho e óleo', descricao: 'Alho e muito oleo' }
+        { codigo: 1, titulo: 'Portuguesa', descricao: 'Queijo, azeitona verde ou preta, ovo cozido, presunto cozido, cebola, ervilha, molho de tomate e azeite' },
+        { codigo: 2, titulo: 'Muçarela', descricao: 'Queijo, azeitona verde' },
+        { codigo: 3, titulo: 'Alho e óleo', descricao: 'Alho e muito oleo' }
       ]
     }
-    this.salgados = salgados.content
-  },
-  components: {
-    ListComponent
+    this.items = salgados.content
   }
-
 }
 </script>
 

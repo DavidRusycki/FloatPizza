@@ -1,44 +1,54 @@
 <template>
-    <div class="item-lista">
-      <h2>{{titulo}}:</h2>
-      <span class="descricao">{{descricao}}</span>
+    <div>
+      <ItemListComponent @click="click(item.codigo)" :codigo="item.codigo" :titulo="item.titulo" :descricao="item.descricao" v-for="(item, indice) in items" :key="indice" :class="{'selecionado': isSelecionado(item.codigo)}"/>
     </div>
 </template>
 
 <script>
+import ItemListComponent from '@/components/ItemListComponent.vue'
 
 export default {
   name: 'ListComponent',
-  props: {
-    titulo: String,
-    descricao: String
+  data () {
+    return {
+      items: [],
+      selecionados: []
+    }
+  },
+  components: {
+    ItemListComponent
+  },
+  methods: {
+    click (codigo) {
+      if (this.foiSelecionado(codigo)) {
+        this.remove(codigo)
+      } else {
+        this.adiciona(codigo)
+      }
+      localStorage.selecionados = JSON.stringify(this.selecionados)
+      console.log(localStorage.selecionados)
+    },
+    isSelecionado (codigo) {
+      return this.foiSelecionado(codigo)
+    },
+    foiSelecionado (codigo) {
+      return this.selecionados.indexOf(codigo) !== -1
+    },
+    adiciona (codigo) {
+      this.selecionados.push(codigo)
+    },
+    remove (codigo) {
+      const indice = this.selecionados.indexOf(codigo)
+      this.selecionados.splice(indice, 1)
+    }
+  },
+  mounted () {
+    this.selecionados = JSON.parse(localStorage.selecionados)
   }
-}
 
+}
 </script>
 
 <style scoped>
-
-.item-lista {
-  display: flex;
-  align-items: center;
-  padding: 0.5em 2em;
-  border-radius: 12px;
-  box-shadow: 0px 0px 1em rgb(219, 219, 219);
-  margin-top: 1em;
-}
-
-.descricao {
-  margin-left: 1em;
-}
-
-.item-lista:active {
-  background-color: #BC1E05 !important;
-  color: white;
-}
-
-.item-lista:hover {
-  background-color: #ebebeb;
-}
 
 </style>

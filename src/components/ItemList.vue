@@ -26,7 +26,8 @@ export default {
     return {
       components: [],
       abas: [],
-      selectedAba: 0
+      selectedAba: 0,
+      pedido: {}
     }
   },
   methods: {
