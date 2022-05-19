@@ -1,31 +1,18 @@
-<template>
-    <div>
-        <ListComponent :titulo="borda.titulo" :descricao="borda.descricao" v-for="(borda, indice) in bordas" :key="indice"/>
-    </div>
-</template>
-
 <script>
 import ListComponent from '@/components/ListComponent.vue'
 
 export default {
   name: 'ListaBordas',
-  data () {
-    return {
-      bordas: []
-    }
-  },
+  extends: ListComponent,
   mounted () {
     const bordas = {
       content: [
-        { titulo: 'Chocolate Preto', descricao: 'Chocolate preto garoto derretido' },
-        { titulo: 'Chocolate Branco', descricao: 'Chocolate branco garoto derretido' },
-        { titulo: 'Chocolate Azul', descricao: 'Chocolate azul da mongolia derretido' }
+        { codigo: 1, titulo: 'Chocolate Preto', descricao: 'Chocolate preto garoto derretido' },
+        { codigo: 2, titulo: 'Chocolate Branco', descricao: 'Chocolate branco garoto derretido' },
+        { codigo: 3, titulo: 'Chocolate Azul', descricao: 'Chocolate azul da mongolia derretido' }
       ]
     }
-    this.bordas = bordas.content
-  },
-  components: {
-    ListComponent
+    this.items = bordas.content
   }
 }
 </script>
