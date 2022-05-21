@@ -25,8 +25,7 @@ export default {
       } else {
         this.adiciona(codigo)
       }
-      localStorage.selecionados = JSON.stringify(this.selecionados)
-      console.log(localStorage.selecionados)
+      this.setSelecionados()
     },
     isSelecionado (codigo) {
       return this.foiSelecionado(codigo)
@@ -40,10 +39,24 @@ export default {
     remove (codigo) {
       const indice = this.selecionados.indexOf(codigo)
       this.selecionados.splice(indice, 1)
+    },
+    setSelecionados () {
+      localStorage.selecionados = JSON.stringify(this.selecionados)
+      console.log(this.selecionados)
+    },
+    getSelecionados () {
+      return this.getLocalStorage()
+    },
+    getLocalStorage () {
+      return localStorage.selecionados
     }
   },
   mounted () {
-    this.selecionados = JSON.parse(localStorage.selecionados)
+    if (this.getSelecionados() === 'undefined') {
+      this.selecionados = []
+    } else {
+      this.selecionados = JSON.parse(this.getSelecionados())
+    }
   }
 
 }

@@ -13,6 +13,15 @@ export default {
       ]
     }
     this.items = salgados.content
+  },
+  methods: {
+    getLocalStorage () {
+      return localStorage.salgados
+    },
+    setSelecionados () {
+      localStorage.salgados = JSON.stringify(this.selecionados)
+      console.log(this.selecionados)
+    }
   }
 }
 </script>
