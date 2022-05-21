@@ -13,6 +13,15 @@ export default {
       ]
     }
     this.items = bebidas.content
+  },
+  methods: {
+    getLocalStorage () {
+      return localStorage.bebidas
+    },
+    setSelecionados () {
+      localStorage.bebidas = JSON.stringify(this.selecionados)
+      console.log(this.selecionados)
+    }
   }
 }
 </script>

@@ -13,6 +13,15 @@ export default {
       ]
     }
     this.items = bordas.content
+  },
+  methods: {
+    getLocalStorage () {
+      return localStorage.bordas
+    },
+    setSelecionados () {
+      localStorage.bordas = JSON.stringify(this.selecionados)
+      console.log(this.selecionados)
+    }
   }
 }
 </script>

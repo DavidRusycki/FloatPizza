@@ -70,6 +70,13 @@ export default {
   mounted () {
     this.abas = this.getAbas()
   },
+  beforeCreate () {
+    localStorage.selecionados = 'undefined'
+    localStorage.salgados = 'undefined'
+    localStorage.doces = 'undefined'
+    localStorage.bordas = 'undefined'
+    localStorage.bebidas = 'undefined'
+  },
   components: {
     ListaSalgados,
     ListaDoces,
