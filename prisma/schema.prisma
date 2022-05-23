@@ -1,0 +1,86 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model tbbebida {
+  bebcodigo      Int             @id(map: "pk_tbbebida") @db.SmallInt
+  bebdescricao   String          @db.VarChar(50)
+  bebvalor       Decimal         @db.Decimal(10, 2)
+  tbbebidapedido tbbebidapedido?
+}
+
+model tbbebidapedido {
+  bebcodigo Int      @id(map: "pk_tbbebidapedido") @default(autoincrement()) @db.SmallInt
+  pedcodigo BigInt
+  tbbebida  tbbebida @relation(fields: [bebcodigo], references: [bebcodigo], onDelete: NoAction, onUpdate: NoAction, map: "tbbebida_tbbebidapedido_fk")
+  tbpedido  tbpedido @relation(fields: [pedcodigo], references: [pedcodigo], onDelete: NoAction, onUpdate: NoAction, map: "tbpedido_tbbebidapedido_fk")
+}
+
+model tbborda {
+  borcodigo    Int       @id(map: "pk_tbborda") @default(autoincrement()) @db.SmallInt
+  bordescricao String    @db.VarChar(50)
+  tbpizza      tbpizza[]
+}
+
+model tbpedido {
+  pedcodigo      BigInt           @id(map: "pk_tbpedido") @default(autoincrement())
+  pedcliente     String           @db.VarChar(100)
+  tmpcodigo      Int              @db.SmallInt
+  tbpizza        tbpizza          @relation(fields: [tmpcodigo], references: [tmpcodigo], onDelete: NoAction, onUpdate: NoAction, map: "tbpizza_tbpedido_fk")
+  tbbebidapedido tbbebidapedido[]
+}
+
+model tbpizza {
+  tmpcodigo      Int              @id(map: "pk_tbpizza") @db.SmallInt
+  borcodigo      Int              @db.SmallInt
+  tbborda        tbborda          @relation(fields: [borcodigo], references: [borcodigo], onDelete: NoAction, onUpdate: NoAction, map: "tbborda_tbpizza_fk")
+  tbtamanhopizza tbtamanhopizza   @relation(fields: [tmpcodigo], references: [tmpcodigo], onDelete: NoAction, onUpdate: NoAction, map: "tbtamanhopizza_tbpizza_fk")
+  tbpedido       tbpedido[]
+  tbpizzadoce    tbpizzadoce[]
+  tbpizzasalgado tbpizzasalgado[]
+}
+
+model tbpizzadoce {
+  sbscodigo   Int         @db.SmallInt
+  tmpcodigo   Int         @db.SmallInt
+  tbsabordoce tbsabordoce @relation(fields: [sbscodigo], references: [sbscodigo], onDelete: NoAction, onUpdate: NoAction, map: "tbsabordoce_tbpizzadoce_fk")
+  tbpizza     tbpizza     @relation(fields: [tmpcodigo], references: [tmpcodigo], onDelete: NoAction, onUpdate: NoAction, map: "tbpizza_tbpizzadoce_fk")
+
+  @@id([sbscodigo, tmpcodigo], map: "pk_tbpizzadoce")
+}
+
+model tbpizzasalgado {
+  sbscodigo      Int            @db.SmallInt
+  tmpcodigo      Int            @db.SmallInt
+  tbsaborsalgado tbsaborsalgado @relation(fields: [sbscodigo], references: [sbscodigo], onDelete: NoAction, onUpdate: NoAction, map: "tbsaborsalgado_tbpizzasalgado_fk")
+  tbpizza        tbpizza        @relation(fields: [tmpcodigo], references: [tmpcodigo], onDelete: NoAction, onUpdate: NoAction, map: "tbpizza_tbpizzasalgado_fk")
+
+  @@id([sbscodigo, tmpcodigo], map: "pk_tbpizzasalgado")
+}
+
+model tbsabordoce {
+  sbscodigo    Int           @id(map: "pk_tbsabordoce") @default(autoincrement()) @db.SmallInt
+  sbddescricao String        @db.VarChar(150)
+  sbdtitulo    String        @db.VarChar(50)
+  tbpizzadoce  tbpizzadoce[]
+}
+
+model tbsaborsalgado {
+  sbscodigo      Int              @id(map: "pk_tbsaborsalgado") @default(autoincrement()) @db.SmallInt
+  sbsdescricao   String           @db.VarChar(150)
+  sbstitulo      String           @db.VarChar(50)
+  tbpizzasalgado tbpizzasalgado[]
+}
+
+model tbtamanhopizza {
+  tmpcodigo    Int      @id(map: "pk_tbtamanhopizza") @default(autoincrement()) @db.SmallInt
+  tmpdescricao String   @db.VarChar(50)
+  tmptamanho   Int
+  tmpvalor     Decimal  @db.Decimal(10, 2)
+  tbpizza      tbpizza?
+}
