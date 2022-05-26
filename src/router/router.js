@@ -1,10 +1,48 @@
 const express = require('express')
 const Router = express()
-const ModelAba = require('../models/ModelAba')
 
 Router.get('/salgados', async (req, res) => {
-  const oModel = new ModelAba('asdf', 'asdf')
-  res.send(oModel)
+  const { PrismaClient } = require('@prisma/client')
+  const Prisma = new PrismaClient()
+  const dados = await Prisma.tbsaborsalgado.findMany()
+
+  res.send(dados)
+})
+
+Router.get('/salgados/inserir', async (req, res) => {
+  console.log(req.body)
+
+  const { PrismaClient } = require('@prisma/client')
+  const Prisma = new PrismaClient()
+  const dados = await Prisma.tbsaborsalgado.create(
+    {}
+  )
+
+  res.send(dados)
+})
+
+Router.get('/doces', async (req, res) => {
+  const { PrismaClient } = require('@prisma/client')
+  const Prisma = new PrismaClient()
+  const dados = await Prisma.tbsabordoce.findMany()
+
+  res.send(dados)
+})
+
+Router.get('/bordas', async (req, res) => {
+  const { PrismaClient } = require('@prisma/client')
+  const Prisma = new PrismaClient()
+  const dados = await Prisma.tbborda.findMany()
+
+  res.send(dados)
+})
+
+Router.get('/bebidas', async (req, res) => {
+  const { PrismaClient } = require('@prisma/client')
+  const Prisma = new PrismaClient()
+  const dados = await Prisma.tbbebidas.findMany()
+
+  res.send(dados)
 })
 
 module.exports = Router
