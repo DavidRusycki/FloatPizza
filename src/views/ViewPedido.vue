@@ -1,8 +1,10 @@
 <template>
+<div class="container">
   <div class="main-container">
     <CardFundoPizza/>
     <ItemList />
   </div>
+</div>
 </template>
 
 <script>
@@ -23,7 +25,8 @@ export default {
 
 .main-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  grid-template-columns: 35% 65%
 }
 
 </style>

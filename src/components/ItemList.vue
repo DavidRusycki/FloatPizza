@@ -104,7 +104,7 @@ export default {
 
 .abas {
   border-radius: 10%;
-  top: 6.5em;
+  top: 16.5em;
   position: absolute;
 }
 
