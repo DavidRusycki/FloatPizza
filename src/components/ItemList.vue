@@ -100,12 +100,14 @@ export default {
   border-radius: 12px;
   box-shadow: 0px 0px 1em rgb(219, 219, 219);
   padding: 1em 2em;
+  margin-right: 3em;
+  height: 35em;
+  overflow-y: scroll;
 }
 
 .abas {
   border-radius: 10%;
-  top: 16.5em;
-  position: absolute;
+  top: 17em;
 }
 
 .selected {

@@ -1,0 +1,10 @@
+axios.post('http://localhost:8080/salgados/inserir', {
+    titulo: 'Portuguesa',
+    descricao: 'Cebola, Ovo, Tomate, Azeitona e muito amor'
+  })
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.error(error);
+  });

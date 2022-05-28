@@ -8,7 +8,7 @@ datasource db {
 }
 
 model tbbebida {
-  bebcodigo      Int             @id(map: "pk_tbbebida") @db.SmallInt
+  bebcodigo      Int             @id(map: "pk_tbbebida") @default(autoincrement()) @db.SmallInt 
   bebdescricao   String          @db.VarChar(50)
   bebvalor       Decimal         @db.Decimal(10, 2)
   tbbebidapedido tbbebidapedido?
@@ -23,6 +23,7 @@ model tbbebidapedido {
 
 model tbborda {
   borcodigo    Int       @id(map: "pk_tbborda") @default(autoincrement()) @db.SmallInt
+  bortitulo    String    @db.VarChar(25)
   bordescricao String    @db.VarChar(50)
   tbpizza      tbpizza[]
 }

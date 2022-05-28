@@ -1,10 +1,8 @@
 <template>
-<div class="container">
   <div class="main-container">
     <CardFundoPizza/>
     <ItemList />
   </div>
-</div>
 </template>
 
 <script>
@@ -24,9 +22,9 @@ export default {
 <style scoped>
 
 .main-container {
+  margin-top: 2em;
   display: grid;
-  align-items: center;
-  grid-template-columns: 35% 65%
+  grid-template-columns: 25% 75%
 }
 
 </style>

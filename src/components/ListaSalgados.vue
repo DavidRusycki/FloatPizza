@@ -4,15 +4,10 @@ import ListComponent from '@/components/ListComponent.vue'
 export default {
   name: 'ListaSalgados',
   extends: ListComponent,
-  mounted () {
-    const salgados = {
-      content: [
-        { codigo: 1, titulo: 'Portuguesa', descricao: 'Queijo, azeitona verde ou preta, ovo cozido, presunto cozido, cebola, ervilha, molho de tomate e azeite' },
-        { codigo: 2, titulo: 'Muçarela', descricao: 'Queijo, azeitona verde' },
-        { codigo: 3, titulo: 'Alho e óleo', descricao: 'Alho e muito oleo' }
-      ]
-    }
-    this.items = salgados.content
+  async mounted () {
+    let salgados = await fetch('http://localhost:8080/salgados')
+    salgados = await salgados.json()
+    this.items = salgados
   },
   methods: {
     getLocalStorage () {
@@ -21,6 +16,15 @@ export default {
     setSelecionados () {
       localStorage.salgados = JSON.stringify(this.selecionados)
       console.log(this.selecionados)
+    },
+    getCodigo (item) {
+      return item.sbscodigo
+    },
+    getTitulo (item) {
+      return item.sbstitulo
+    },
+    getDescricao (item) {
+      return item.sbsdescricao
     }
   }
 }

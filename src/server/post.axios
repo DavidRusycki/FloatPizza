@@ -1,0 +1,10 @@
+axios.post('http://localhost:8080/salgados/inserir', {
+    firstName: 'Santos',
+    lastName: 'Dumont'
+  })
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.error(error);
+  });

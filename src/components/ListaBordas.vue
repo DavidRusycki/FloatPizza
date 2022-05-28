@@ -4,15 +4,10 @@ import ListComponent from '@/components/ListComponent.vue'
 export default {
   name: 'ListaBordas',
   extends: ListComponent,
-  mounted () {
-    const bordas = {
-      content: [
-        { codigo: 1, titulo: 'Chocolate Preto', descricao: 'Chocolate preto garoto derretido' },
-        { codigo: 2, titulo: 'Chocolate Branco', descricao: 'Chocolate branco garoto derretido' },
-        { codigo: 3, titulo: 'Chocolate Azul', descricao: 'Chocolate azul da mongolia derretido' }
-      ]
-    }
-    this.items = bordas.content
+  async mounted () {
+    let bordas = await fetch('http://localhost:8080/bordas')
+    bordas = await bordas.json()
+    this.items = bordas
   },
   methods: {
     getLocalStorage () {
@@ -21,6 +16,15 @@ export default {
     setSelecionados () {
       localStorage.bordas = JSON.stringify(this.selecionados)
       console.log(this.selecionados)
+    },
+    getCodigo (item) {
+      return item.borcodigo
+    },
+    getTitulo (item) {
+      return item.bortitulo
+    },
+    getDescricao (item) {
+      return item.bordescricao
     }
   }
 }

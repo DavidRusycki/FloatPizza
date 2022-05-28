@@ -1,6 +1,6 @@
 <template>
     <div>
-      <ItemListComponent @click="click(item.codigo)" :codigo="item.codigo" :titulo="item.titulo" :descricao="item.descricao" v-for="(item, indice) in items" :key="indice" :class="{'selecionado': isSelecionado(item.codigo)}"/>
+      <ItemListComponent @click="click(this.getCodigo(item))" :codigo="this.getCodigo(item)" :titulo="this.getTitulo(item)" :descricao="this.getDescricao(item)" v-for="(item, indice) in items" :key="indice" :class="{'selecionado': isSelecionado(this.getCodigo(item))}"/>
     </div>
 </template>
 
@@ -49,6 +49,15 @@ export default {
     },
     getLocalStorage () {
       return localStorage.selecionados
+    },
+    getCodigo (item) {
+      return item.codigo
+    },
+    getTitulo (item) {
+      return item.titulo
+    },
+    getDescricao (item) {
+      return item.descricao
     }
   },
   mounted () {

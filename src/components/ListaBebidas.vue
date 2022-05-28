@@ -4,15 +4,10 @@ import ListComponent from '@/components/ListComponent.vue'
 export default {
   name: 'ListaBebidas',
   extends: ListComponent,
-  mounted () {
-    const bebidas = {
-      content: [
-        { codigo: 1, titulo: 'Cachaça', descricao: 'R$ 5.50' },
-        { codigo: 2, titulo: 'Cerveja', descricao: 'R$ 5.50' },
-        { codigo: 3, titulo: 'Coquinha', descricao: 'R$ 5.50' }
-      ]
-    }
-    this.items = bebidas.content
+  async mounted () {
+    let bebidas = await fetch('http://localhost:8080/bebidas')
+    bebidas = await bebidas.json()
+    this.items = bebidas
   },
   methods: {
     getLocalStorage () {
@@ -21,6 +16,15 @@ export default {
     setSelecionados () {
       localStorage.bebidas = JSON.stringify(this.selecionados)
       console.log(this.selecionados)
+    },
+    getCodigo (item) {
+      return item.bebcodigo
+    },
+    getTitulo (item) {
+      return item.bebdescricao
+    },
+    getDescricao (item) {
+      return item.bebvalor
     }
   }
 }

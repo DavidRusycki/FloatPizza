@@ -3,6 +3,7 @@ CREATE SEQUENCE public.tbborda_borcodigo_seq;
 
 CREATE TABLE public.tbborda (
                 borcodigo SMALLINT NOT NULL DEFAULT nextval('public.tbborda_borcodigo_seq'),
+                bortitulo VARCHAR(25) NOT NULL,
                 bordescricao VARCHAR(50) NOT NULL,
                 CONSTRAINT pk_tbborda PRIMARY KEY (borcodigo)
 );
@@ -10,8 +11,10 @@ CREATE TABLE public.tbborda (
 
 ALTER SEQUENCE public.tbborda_borcodigo_seq OWNED BY public.tbborda.borcodigo;
 
+CREATE SEQUENCE public.tbbebida_bebcodigo_seq;
+
 CREATE TABLE public.tbbebida (
-                bebcodigo SMALLINT NOT NULL,
+                bebcodigo SMALLINT NOT NULL DEFAULT nextval('public.tbbebida_bebcodigo_seq'),
                 bebdescricao VARCHAR(50) NOT NULL,
                 bebvalor NUMERIC(10,2) NOT NULL,
                 CONSTRAINT pk_tbbebida PRIMARY KEY (bebcodigo)
