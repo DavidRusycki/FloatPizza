@@ -21,6 +21,16 @@ Router.post('/salgados/inserir', async (req, res) => {
   res.json(post)
 })
 
+Router.post('/salgados/deletar', async (req, res) => {
+  const { id } = req.body
+  const post = await Prisma.tbsaborsalgado.delete({
+    where: {
+      sbscodigo: id
+    }
+  })
+  res.json(post)
+})
+
 Router.get('/doces', async (req, res) => {
   const dados = await Prisma.tbsabordoce.findMany()
 

@@ -4,7 +4,7 @@
       <router-link class="link" to="/">Home</router-link>
       <router-link class="link" to="/pedidos">Pedidos</router-link>
       <router-link class="link" to="/pedido">Pedido</router-link>
-      <router-link class="link" to="/contato">Contato</router-link>
+      <router-link class="link" to="/salgado">Salgado</router-link>
       <router-link class="link" to="/endereco">Endereço</router-link>
   </nav>
 </template>

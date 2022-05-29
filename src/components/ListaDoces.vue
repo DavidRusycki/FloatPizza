@@ -18,7 +18,7 @@ export default {
       console.log(this.selecionados)
     },
     getCodigo (item) {
-      return item.sbdcodigo
+      return item.sbscodigo
     },
     getTitulo (item) {
       return item.sbdtitulo
