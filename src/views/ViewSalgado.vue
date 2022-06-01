@@ -25,7 +25,7 @@
           />
         </div>
         <div class="input-container">
-          <input type="submit" class="submit-btn" value="Adicionar Salgado" />
+          <input type="submit" class="submit-btn btn btn-success" value="Adicionar Salgado" />
         </div>
       </form>
 
@@ -33,7 +33,7 @@
       <div>
         <ul>
           <li :key="salgado.sbscodigo" v-for="salgado in this.salgados">{{salgado.sbstitulo}}
-            <button @click="deleteSalgado(salgado)">Excluir</button>
+            <button @click="deleteSalgado(salgado)" class="btn btn-danger">Excluir</button>
           </li>
         </ul>
       </div>

@@ -25,14 +25,14 @@
           />
         </div>
         <div class="input-container">
-          <input type="submit" class="submit-btn" value="Adicionar Doce" />
+          <input type="submit" class="submit-btn btn btn-success" value="Adicionar Doce" />
         </div>
       </form>
 
       <div>
         <ul>
           <li :key="Doce.sbscodigo" v-for="Doce in this.Doces">{{Doce.sbdtitulo}}
-            <button @click="deleteDoce(Doce)">Excluir</button>
+            <button @click="deleteDoce(Doce)" class="btn btn-danger">Excluir</button>
           </li>
         </ul>
       </div>

@@ -25,14 +25,14 @@
           />
         </div>
         <div class="input-container">
-          <input type="submit" class="submit-btn" value="Adicionar Borda" />
+          <input type="submit" class="submit-btn btn btn-success" value="Adicionar Borda" />
         </div>
       </form>
 
       <div>
         <ul>
           <li :key="Borda.borcodigo" v-for="Borda in this.Bordas">{{Borda.bortitulo}}
-            <button @click="deleteBorda(Borda)">Excluir</button>
+            <button @click="deleteBorda(Borda)" class="btn btn-danger">Excluir</button>
           </li>
         </ul>
       </div>

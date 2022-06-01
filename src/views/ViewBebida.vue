@@ -14,10 +14,10 @@
           />
         </div>
         <div class="input-container">
-          <label for="descricao">Descrição :</label>
+          <label for="descricao">Valor :</label>
           <input
             required
-            type="text"
+            type="number"
             name="descricao"
             id="descricao"
             v-model="descricao"
@@ -25,14 +25,14 @@
           />
         </div>
         <div class="input-container">
-          <input type="submit" class="submit-btn" value="Adicionar Bebida" />
+          <input type="submit" class="submit-btn btn btn-success" value="Adicionar Bebida" />
         </div>
       </form>
 
       <div>
         <ul>
           <li :key="Bebida.bebcodigo" v-for="Bebida in this.Bebidas">{{Bebida.bebdescricao}}
-            <button @click="deleteBebida(Bebida)">Excluir</button>
+            <button @click="deleteBebida(Bebida)" class="btn btn-danger">Excluir</button>
           </li>
         </ul>
       </div>
