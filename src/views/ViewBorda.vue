@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <div class="main-formulario">
       <form action="" id="Bordas-form" @submit="createBorda">
         <div class="input-container">
@@ -96,4 +96,12 @@ export default {
 </script>
 
 <style scoped>
+form{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.input-container{
+  margin: 1vh;
+}
 </style>
