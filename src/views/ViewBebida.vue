@@ -59,10 +59,7 @@ export default {
       axios
         .post('http://localhost:8080/bebidas/inserir', {
           titulo: this.titulo,
-          descricao: this.descricao,
-          headers: {
-            'Access-Control-Allow-Origin': '*'
-          }
+          descricao: this.descricao
         })
         .then(function (response) {
           console.log(response)
