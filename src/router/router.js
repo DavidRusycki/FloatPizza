@@ -75,8 +75,8 @@ Router.post('/bebidas/inserir', async (req, res) => {
   const { titulo, descricao } = req.body
   const post = await Prisma.tbbebida.create({
     data: {
-      bebvalor: descricao,
-      bebdescricao: titulo
+      bebdescricao: titulo,
+      bebvalor: descricao
     }
   })
   res.json(post)
