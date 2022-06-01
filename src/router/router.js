@@ -48,6 +48,16 @@ Router.post('/doces/inserir', async (req, res) => {
   res.json(post)
 })
 
+Router.post('/doces/deletar', async (req, res) => {
+  const { id } = req.body
+  const post = await Prisma.tbsaborsalgado.delete({
+    where: {
+      sbscodigo: id
+    }
+  })
+  res.json(post)
+})
+
 Router.get('/bordas', async (req, res) => {
   const dados = await Prisma.tbborda.findMany()
 
@@ -65,6 +75,16 @@ Router.post('/bordas/inserir', async (req, res) => {
   res.json(post)
 })
 
+Router.post('/bordas/deletar', async (req, res) => {
+  const { id } = req.body
+  const post = await Prisma.tbborda.delete({
+    where: {
+      borcodigo: id
+    }
+  })
+  res.json(post)
+})
+
 Router.get('/bebidas', async (req, res) => {
   const dados = await Prisma.tbbebida.findMany()
 
@@ -77,6 +97,16 @@ Router.post('/bebidas/inserir', async (req, res) => {
     data: {
       bebdescricao: titulo,
       bebvalor: descricao
+    }
+  })
+  res.json(post)
+})
+
+Router.post('/bebidas/deletar', async (req, res) => {
+  const { id } = req.body
+  const post = await Prisma.tbbebida.delete({
+    where: {
+      bebcodigo: id
     }
   })
   res.json(post)
