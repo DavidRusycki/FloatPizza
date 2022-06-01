@@ -29,6 +29,7 @@
         </div>
       </form>
 
+      <br>
       <div>
         <ul>
           <li :key="salgado.sbscodigo" v-for="salgado in this.salgados">{{salgado.sbstitulo}}
@@ -96,14 +97,13 @@ export default {
 </script>
 
 <style scoped>
-.main-formulario{
-  display: flex;
-  justify-content: center;
-}
 form{
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+.input-container{
+  margin: 1vh;
 }
 
 </style>

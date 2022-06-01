@@ -5,6 +5,9 @@
       <router-link class="link" to="/pedidos">Pedidos</router-link>
       <router-link class="link" to="/pedido">Pedido</router-link>
       <router-link class="link" to="/salgado">Salgado</router-link>
+      <router-link class="link" to="/doce">Doces</router-link>
+      <router-link class="link" to="/borda">Bordas</router-link>
+      <router-link class="link" to="/bebidas">Bebidas</router-link>
       <router-link class="link" to="/endereco">Endereço</router-link>
   </nav>
 </template>

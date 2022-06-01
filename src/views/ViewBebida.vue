@@ -31,7 +31,7 @@
 
       <div>
         <ul>
-          <li :key="Bebida.bebcodigo" v-for="Bebida in this.Bebidas">{{Bebida.bebtitulo}}
+          <li :key="Bebida.bebcodigo" v-for="Bebida in this.Bebidas">{{Bebida.bebdescricao}}
             <button @click="deleteBebida(Bebida)">Excluir</button>
           </li>
         </ul>
