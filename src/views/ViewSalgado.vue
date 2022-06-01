@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <div class="main-formulario">
       <form action="" id="salgados-form" @submit="createSalgado">
         <div class="input-container">
@@ -96,4 +96,14 @@ export default {
 </script>
 
 <style scoped>
+.main-formulario{
+  display: flex;
+  justify-content: center;
+}
+form{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 </style>
